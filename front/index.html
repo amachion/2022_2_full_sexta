@@ -8,6 +8,49 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.css">
 </head>
 <body onload="obterFilmes()">
+    <div class="modal fade" id="modalCadastro"
+        aria-labelledby="modalCadastro" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title fs-5">Cadastro de Usuário</div>
+                </div>
+                <div class="modal-body">
+                    <div class="d-none alert alert-dismissible fade alert-modal-cadastro" role="alert">
+                    </div>
+                    <form>
+                        <div class="mb-3">
+                            <label for="usuarioCadastroInput"
+                                   class="col-form-label">Usuário</label>
+                            <input type="text" id="usuarioCadastroInput"
+                                   class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="passwordCadastroInput"
+                                   class="col-form-label">Senha</label>
+                            <input type="password" id="passwordCadastroInput"
+                                   class="form-control">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                        Cancelar
+                    </button>
+                    <button onclick="cadastrarUsuario()" 
+                            type="button" class="btn btn-primary">
+                        Cadastrar
+                    </button>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+
+
+
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -21,7 +64,18 @@
                         aria-label="toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <div class="navbar-nav ms-auto">
+                            <a class="nav-link active me-2"
+                               aria-current="page" href="#">Login</a>
+                        </div>
+                        <div class="navbar-nav ms-auto">
+                            <a class="nav-link active me-2"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modalCadastro"
+                            aria-current="page" href="#">Novo Usuário</a>
+                        </div>
+                    </div>
                 </nav>
             </div>
         </div>
